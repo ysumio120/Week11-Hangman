@@ -29,7 +29,7 @@ rl.on('line', function(line){
 		process.stdout.write("Your Guess: ");
 	}
 	else {
-    	guessedLetter = line;
+    	guessedLetter = line.trim();
     	// Check duplicate guess
     	if(newGame.checkLetter(guessedLetter) == true) {
     		console.log("Already guessed. Guess again");
@@ -38,7 +38,7 @@ rl.on('line', function(line){
     		process.stdout.write("\nYour Guess: ");
     		return;
     	}
-    	// Check if correct guess
+    	// Check if current guess is correct
     	if(word.checkMatch(guessedLetter, newGame)) {
     		console.log("You guessed right!");
     	}
@@ -50,7 +50,7 @@ rl.on('line', function(line){
     	newGame.printProgress();
     	console.log();
     	
-    	// Check if all letter correctly guessed
+    	// Check if all letters were correctly guessed
     	if(newGame.checkWord()) {
     		console.log("YOU WIN!!");
     		process.exit();
