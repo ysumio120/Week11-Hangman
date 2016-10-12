@@ -16,8 +16,10 @@ var newGame = new game.game();
 // Initiate game
 newGame.init();
 
-console.log(newGame.word);
-
+//console.log(newGame.word);
+console.log("---------------------------------------");
+console.log("           POKEMON HANGMAN");
+console.log("---------------------------------------");
 console.log("Guesses left: " + newGame.guessCount);
 newGame.printProgress();
 process.stdout.write("\nYour Guess: ");
